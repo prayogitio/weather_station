@@ -25,7 +25,7 @@ SECRET_KEY = 'rvg2x%u5gawj)qa#4^zjaj(3=9riemk0w)mpwmq)zkjb+%9h@i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://myweather-test-app.herokuapp.com']
+ALLOWED_HOSTS = ['myweather-test-app.herokuapp.com']
 
 
 # Application definition
