@@ -18,12 +18,10 @@ def fetch_data():
     precip = data['precip_today_string']
     icon_url = data['icon_url']
     observation_time = data['observation_time']
-    print(data)
-    print(r)
-"""
+
     #open db
     try:
-        conn = psycopg2.connect(dbname='weather', user='postgres', host='localhost', password='postgres')
+        conn = psycopg2.connect(dbname='ddsrhl7bs2s92s', user='pfslmemsohxcyf', host='ec2-54-243-239-66.compute-1.amazonaws.com', password='240d69c8c0883ee384fd64af1dd279f9a4b11f1d568b7ecc49bc868fccf7de2c')
         print('Database connected')
     except:
         print(datetime.now(), "Unable to connect to database")
@@ -33,12 +31,10 @@ def fetch_data():
         cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
     # save data to dbase
-    cur.execute(insert into station_reading (location, weather, wind_str, temp, humidity, precip, icon_url, observation_time) values (%s, %s, %s, %s, %s, %s, %s, %s), (location, weather, wind_str, temp, humidity, precip, icon_url, observation_time))
+    cur.execute("""insert into station_reading (location, weather, wind_str, temp, humidity, precip, icon_url, observation_time) values (%s, %s, %s, %s, %s, %s, %s, %s)""", (location, weather, wind_str, temp, humidity, precip, icon_url, observation_time))
     conn.commit()
     cur.close()
     conn.close()
     print('New data writen at: ', datetime.now())
-
-fetch_data()"""
 
 fetch_data()
