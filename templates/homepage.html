@@ -1,0 +1,49 @@
+{% load static from staticfiles %}
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Weather Station</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="/static/styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="container-fluid">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}">Weather Station</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'station_app:station' %}">Weather Page</a></li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        <div class="panel panel-default"></div>
+        {% block content %}
+            <h2>About</h2>
+            <p>
+                A personal weather station is a set of weather measuring instruments that you can install at your own home or business. The number of instruments can vary, but most personal weather stations include instruments to measure temperature, relative humidity, pressure, rain fall, and wind speed and direction. Scroll down to learn more about these sensors and how a personal weather station works.
+            </p>
+            <p>
+            <p>
+                Go to <a href="https://www.wunderground.com/weather/api/"><b>Visit</b></a> for more info
+            </p>
+            <p>
+                Go to <a href="{% url 'station_app:station' %}"><b>Weather Page</b></a> for more info
+            </p>
+        {% endblock %}
+        <div class="panel panel-default text-center"></div>
+    </body>
+</html>
