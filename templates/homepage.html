@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="icon" href="{% static "icon.png" %}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body class="container-fluid">
@@ -31,7 +30,7 @@
             </div>
         </nav>
         <div class="panel panel-default"></div>
-        <img src="{% static "icon.png" %}"></img>
+        <span>{{ static }}</span>
         {% block content %}
             <h2>About</h2>
             <p>
